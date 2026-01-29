@@ -21,9 +21,9 @@ recipe_saji = float(input(f'レシピは{saji_name}何杯？: '))
 
 cook_servs = int(input('作る料理は何人前？: '))
 
-recipe_kosaji = {} if saji_type == 'L' else recipe_saji
+recipe_kosaji = recipe_saji * 3 if saji_type == 'L' else recipe_saji
 adjust_kosaji = adjust_recipe(recipe_kosaji, recipe_servs, cook_servs)
 
-{}
+cook_oosaji, cook_kosaji = divmod(adjust_kosaji, 3)
 
 print(f'{cook_servs}人前では、大さじが{cook_oosaji:.0f}杯と小さじが{round_kosaji(cook_kosaji)}杯です。')
